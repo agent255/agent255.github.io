@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Using multiple CSS classes</title>
+        <title>Combining CSS class and element selectors</title>
         <style>
             p {
                 font-family: monospace;
@@ -21,8 +21,13 @@
             }
             
             .warning {
+                
                 background-color: red;
                 color: white;
+            }
+            
+            p.warning {
+                border: 5px solid orange;
             }
             
         </style>
