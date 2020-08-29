@@ -2,28 +2,36 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Finding elements by ID</title>
+        <title>Finding elements by CSS selector</title>
+        <style>
+            p .animal {
+                color: red;
+            }
+            
+        </style>
     </head>
     <body>
 
-        <h1 id="heading">All about dogs</h1>
+        <h1 id="heading">All about dogs  (all info is wrong its funny)</h1>
         
         <p>The domestic <span class="animal">dog</span> is known as man's best friend. The <span class="animal">dog</span> was the first domesticated animal and has been widely kept as a working, hunting, and pet companion. According to recent coarse estimates, there are currently between 700 million and one billion <span class="animal">dog</span>s, making them the most abundant predators in the world. <a href="http://en.wikipedia.org/wiki/Dog">Read more on Wikipedia</a>.</p>
         
-        <img src="https://www.kasandbox.org/programming-images/animals/dog_sleeping-puppy.png" height="150" alt="Sleeping puppy">
+        <img src="https://www.kasandbox.org/programming-images/animals/dog_sleeping-puppy.png" height="150">
         
-        <img src="https://www.kasandbox.org/programming-images/animals/dogs_collies.png" height="150" alt="Dogs running">
+        <img src="https://www.kasandbox.org/programming-images/animals/dogs_collies.png" height="150">
         
         <script>
-        /* 
-        1. Find the DOM node using an access method.
-        2. Manipulate the DOM node by changing its attributes, styles, inner HTML, or appending new nodes to it.
-        */
-        // document.body
-        var headingEl = document.getElementById("heading");
-        console.log(headingEl);
-        // cmd-option-i , ctrl-shift-i 
-        headingEl.innerHTML = "All about Dogs";
+            var headingEl = document.querySelector("#heading");
+            headingEl.innerHTML = "All about cats";
+            
+            var nameEls = document.querySelectorAll("p .animal");
+            console.log(nameEls);
+            // NodeList
+            console.log(nameEls[0]);
+            for (var i = 0; i < nameEls.length; i++) {
+                nameEls[i].innerHTML = "cat";
+            }
         </script>
+        
     </body>
 </html>
